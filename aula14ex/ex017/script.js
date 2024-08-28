@@ -1,23 +1,16 @@
-function multiplicar() {
-
-    var multiplicando = window.document.getElementById('numtxt');
-    multiplicando = Number(multiplicando.value);
-    var multiplicador = 0;
-    var tabuada = window.document.getElementById('tabuada');
-
-    for (i = multiplicador; i <= 10; i++) {
-        var multiplicação = multiplicando * multiplicador;
-        var option = document.createElement('option');
-        option.innerHTML = `${multiplicando} x ${multiplicador} = ${multiplicação}`;
-        tabuada.add(option);
-        multiplicador++;
+function tabuada() {
+    let num = document.getElementById('txtn');
+    let tab = document.getElementById('seltab');
+    if (num.value.length == 0) {
+        window.alert('Por favor, digite um número!')
+    } else {
+        let n = Number(num.value);
+        tab.innerHTML = ' ';
+        for (var c = 1; c <= 10; c++) {
+            let item = document.createElement('option');
+            item.text = `${n} x ${c} = ${n * c}`;
+            item.value = `tab${c}`;
+            tab.appendChild(item);
+        }
     }
-
-    /*while (multiplicador <= 10) {
-        var multiplicação = multiplicando * multiplicador;
-        var option = document.createElement('option');
-        option.innerHTML = `${multiplicando} x ${multiplicador} = ${multiplicação}`;
-        tabuada.add(option);
-        multiplicador++;
-    }*/
 }
